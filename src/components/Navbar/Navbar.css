@@ -156,3 +156,12 @@
     display: none;
   }
 }
+
+/* 630 */
+@media (max-width: 550px) {
+  .navbar-profile:hover .dropdown {
+    display: block;
+    right: 20px;
+    padding: 8px;
+  }
+}
