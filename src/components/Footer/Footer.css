@@ -50,4 +50,10 @@
     display: grid;
     grid-template-columns: auto auto;
   }
+
+  .footer .additional-info {
+    display: grid;
+    gap: 4px;
+    grid-template-columns: auto auto;
+  }
 }
