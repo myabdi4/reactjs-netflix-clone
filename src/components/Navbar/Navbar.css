@@ -152,4 +152,7 @@
     width: 200px;
     justify-content: center;
   }
+  .navbar-left img {
+    display: none;
+  }
 }
