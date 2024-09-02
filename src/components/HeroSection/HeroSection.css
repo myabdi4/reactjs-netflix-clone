@@ -111,6 +111,9 @@
   .heroSection .hero-caption .caption-img {
     display: none;
   }
+  .hero-caption h3 {
+    display: none;
+  }
 }
 
 /* 630 */
