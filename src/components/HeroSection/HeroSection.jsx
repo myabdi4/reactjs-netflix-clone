@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { fetchNowPlayingMovies } from "../../api/tmdbApi"; // Import the API function
-import "./heroSection.css";
+import "./HeroSection.css";
 import { Link } from "react-router-dom";
 
 // IMAGES AND ICONS

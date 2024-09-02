@@ -1,5 +1,5 @@
 import React from "react";
-import "./footer.css";
+import "./Footer.css";
 
 // IMAGES AND ICONS
 import youtube_icon from "../../assets/youtube_icon.png";
