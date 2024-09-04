@@ -1,0 +1,29 @@
+.profiles {
+  display: flex;
+  height: 100vh;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 25px;
+}
+
+.profiles h2 {
+  font-size: 44px;
+}
+
+.profiles img {
+  width: 95px;
+  cursor: pointer;
+}
+.profile-img {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.profile-img p {
+  color: gray;
+  font-size: 18px;
+  cursor: pointer;
+}

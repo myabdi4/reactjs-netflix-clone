@@ -10,8 +10,10 @@ import bell_icon from "../../assets/bell_icon.svg";
 import profile_img from "../../assets/profile_img.png";
 import dropdown_icon from "../../assets/caret_icon.svg";
 import { logout } from "../../firebase/firebase";
+import { useUser } from "../../components/UserProvider";
 
 const Navbar = () => {
+  const { user } = useUser();
   const navRef = useRef();
 
   useEffect(() => {
@@ -45,7 +47,9 @@ const Navbar = () => {
           <img src={profile_img} alt="" className="profile" />
           <img src={dropdown_icon} alt="" />
           <div className="dropdown">
+            <p className="user-name">{user ? user.name : "Guest"}</p>
             <p
+              className="logout-p"
               onClick={() => {
                 logout();
               }}

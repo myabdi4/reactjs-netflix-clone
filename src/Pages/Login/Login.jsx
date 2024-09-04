@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useUser } from "../../components/UserProvider";
 import "./Login.css";
 
 import logo from "../../assets/logo.png";
@@ -11,6 +12,7 @@ const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
+  const { setUser } = useUser();
 
   const user_auth = async (event) => {
     event.preventDefault();
@@ -18,7 +20,9 @@ const Login = () => {
     if (signState === "Sign in") {
       await login(email, password);
     } else {
-      await signup(name, email, password);
+      const user = await signup(name, email, password);
+      setUser(user);
+      console.log(user);
     }
     setLoading(false);
   };
