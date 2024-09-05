@@ -1,41 +1,29 @@
-import { useState, useEffect } from "react";
+import Home from "./Pages/Home/Home";
+import Login from "./Pages/Login/Login.jsx";
+
 import { Routes, Route, useNavigate } from "react-router-dom";
+import Player from "./Pages/Player/Player.jsx";
 import { onAuthStateChanged } from "firebase/auth";
+import { useEffect } from "react";
 import { auth } from "./firebase/firebase.jsx";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import Home from "./Pages/Home/Home";
-import Login from "./Pages/Login/Login.jsx";
-import Player from "./Pages/Player/Player.jsx";
 import Profiles from "./Pages/Profiles/Profiles.jsx";
 
 function App() {
-  const [initializing, setInitializing] = useState(true);
   const navigate = useNavigate();
 
   useEffect(() => {
-    const unsubscribe = onAuthStateChanged(auth, (user) => {
+    onAuthStateChanged(auth, async (user) => {
       if (user) {
-        // If the user is authenticated, check local storage or redirect
-        const lastRoute = localStorage.getItem("lastRoute") || "/";
-        navigate(lastRoute);
+        console.log("Logged in");
+        navigate("/");
       } else {
-        // If the user is not authenticated, navigate to login
-        localStorage.removeItem("lastRoute");
+        console.log(" Logged out");
         navigate("/login");
       }
-      setInitializing(false);
     });
-
-    // Cleanup subscription on unmount
-    return () => unsubscribe();
-  }, [navigate]);
-
-  if (initializing) {
-    // Optionally render a loading spinner while initializing
-    return <div>Loading...</div>;
-  }
-
+  }, []);
   return (
     <>
       <ToastContainer theme="dark" />
