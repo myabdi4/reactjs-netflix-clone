@@ -3,7 +3,8 @@
 // const API_URL = `https://api.themoviedb.org/3/movie/${
 //   category ? category : "now_playing"
 // }?language=en-US&page=1`;
-const API_KEY = import.meta.env.VITE_TMDB_API_KEY; // Store your API key here
+const API_KEY =
+  "eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJjNmU3OTAzMWE4MWY0YzQ0YjY4NzE0NTU0YTU2OWViZCIsIm5iZiI6MTcyNTE5NTYyNS4wNzY2MjUsInN1YiI6IjY2MmIzNTkxMzIzZWJhMDExZTNlZjdlZCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.uNFYmfxBw9-HohXH186SG80Oo2bZ7tnkFN23BEMgqRc"; // Store your API key here
 
 export const fetchNowPlayingMovies = async ({ category = "now_playing" }) => {
   try {
